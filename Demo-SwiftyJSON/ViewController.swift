@@ -22,6 +22,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         getPetitions()
     }
     
+    // Marker: tableView delegate
+    //
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -37,16 +39,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.titleLabel.text = petition.title
         cell.titleLabel.font = UIFont.boldSystemFont(ofSize: 19)
         cell.bodyLabel.text = petition.body
+        cell.signatureLabel.font = UIFont.italicSystemFont(ofSize: 17)
+        cell.signatureLabel.textColor = UIColor.red
+        cell.urlLabel.text = petition.url
+        cell.urlLabel.textColor = UIColor.blue
         
-//        if petition.signatureCount != 1 {
-//            cell.signatureLabel.text = "\(petition.signatureCount) Signatures"
-//        }
-//        else {
-//            cell.signatureLabel.text = "\(petition.signatureCount) Signature"
-//        }
+        let signatureCount = petition.signatureCount
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        if let formattedNumber = numberFormatter.string(from: NSNumber(value: signatureCount)) {
+            if signatureCount != 1 {
+                cell.signatureLabel.text = "\(formattedNumber) Signatures"
+            }
+            else {
+                cell.signatureLabel.text = "\(formattedNumber) Signature"
+            }
+        }
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.openURL(recognizer:)))
+        cell.urlLabel.addGestureRecognizer(tapGesture)
+        cell.urlLabel.isUserInteractionEnabled = true
         
         return cell
+    }
+    
+    @objc func openURL(recognizer: UITapGestureRecognizer) {
+        let location = recognizer.location(in: self.tableView)
+        if let indexPath = self.tableView.indexPathForRow(at: location) {
+            let urlString = petitions[indexPath.row].url
+            
+            if let url = URL(string: urlString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
     }
     
     func getPetitions() {
@@ -73,12 +98,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func parse(json: JSON) {
         DispatchQueue.global(qos: .utility).async {
             for result in json["results"].arrayValue {
-                if let petition = Petition(json: result) {
+                // print("result: \(result)")
+                let petition = Petition(json: result)
                     
-                    DispatchQueue.main.async {
-                        self.petitions.append(petition)
-                        self.tableView.reloadData()
-                    }
+                DispatchQueue.main.async {
+                    self.petitions.append(petition)
+                    self.tableView.reloadData()
                 }
             }
         }

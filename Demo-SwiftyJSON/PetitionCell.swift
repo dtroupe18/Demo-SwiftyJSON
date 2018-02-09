@@ -13,6 +13,7 @@ class PetitionCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var signatureLabel: UILabel!
+    @IBOutlet weak var urlLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

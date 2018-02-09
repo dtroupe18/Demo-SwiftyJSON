@@ -14,12 +14,12 @@ struct Petition {
     let title: String
     let body: String
     let signatureCount: Int
+    let url: String
     
-    init?(json: JSON) {
+    init(json: JSON) {
         self.title = json["title"].stringValue
         self.body = json["body"].stringValue
         self.signatureCount = json["signatureCount"].intValue
-        
-        // print("Petition:\ntitle: \(title)\nbody: \(body)\nsignaturecount: \(signatureCount)\n")
+        self.url = json["url"].stringValue
     }
 }
