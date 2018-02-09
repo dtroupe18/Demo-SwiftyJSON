@@ -14,6 +14,7 @@
 		55624009202E24ED00507CD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55624007202E24ED00507CD3 /* LaunchScreen.storyboard */; };
 		55624011202E2E3400507CD3 /* Petition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55624010202E2E3400507CD3 /* Petition.swift */; };
 		55624013202E347400507CD3 /* PetitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55624012202E347400507CD3 /* PetitionCell.swift */; };
+		55624015202E4D5F00507CD3 /* ScreenShot.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55624014202E4D5F00507CD3 /* ScreenShot.PNG */; };
 		D65130B6BB5BC0EA84192A40 /* Pods_Demo_SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30371715AB455A00BB0C8F5F /* Pods_Demo_SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		5562400A202E24ED00507CD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55624010202E2E3400507CD3 /* Petition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petition.swift; sourceTree = "<group>"; };
 		55624012202E347400507CD3 /* PetitionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetitionCell.swift; sourceTree = "<group>"; };
+		55624014202E4D5F00507CD3 /* ScreenShot.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot.PNG; sourceTree = "<group>"; };
 		6CF3FF5154F88D0E90DE4B28 /* Pods-Demo-SwiftyJSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo-SwiftyJSON.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo-SwiftyJSON/Pods-Demo-SwiftyJSON.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				55624005202E24ED00507CD3 /* Assets.xcassets */,
 				55624007202E24ED00507CD3 /* LaunchScreen.storyboard */,
 				5562400A202E24ED00507CD3 /* Info.plist */,
+				55624014202E4D5F00507CD3 /* ScreenShot.PNG */,
 			);
 			path = "Demo-SwiftyJSON";
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				55624009202E24ED00507CD3 /* LaunchScreen.storyboard in Resources */,
 				55624006202E24ED00507CD3 /* Assets.xcassets in Resources */,
 				55624004202E24ED00507CD3 /* Main.storyboard in Resources */,
+				55624015202E4D5F00507CD3 /* ScreenShot.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
